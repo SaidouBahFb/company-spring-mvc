@@ -1,4 +1,7 @@
 package com.groupeisi.companyspringmvc.dao;
 
-public interface SalesDao {
+import com.groupeisi.companyspringmvc.entities.Sales;
+
+public class SalesDao extends RepositoryImpl<Sales> implements ISalesDao {
+
 }

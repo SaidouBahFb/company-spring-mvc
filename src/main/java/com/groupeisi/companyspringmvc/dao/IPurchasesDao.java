@@ -1,4 +1,6 @@
 package com.groupeisi.companyspringmvc.dao;
 
-public interface IPurchasesDao {
+import com.groupeisi.companyspringmvc.entities.Purchases;
+
+public interface IPurchasesDao extends Repository<Purchases>{
 }
