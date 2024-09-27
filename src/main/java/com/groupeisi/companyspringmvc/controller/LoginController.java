@@ -31,8 +31,7 @@ public class LoginController {
     public String login(
             @RequestParam("username") String userName,
             @RequestParam("password") String password,
-            HttpSession session,
-            RedirectAttributes redirectAttributes) {
+            HttpSession session) {
 
         logger.info("Nom d'utilisateur envoyé: {}", userName);
 
@@ -41,13 +40,14 @@ public class LoginController {
 
             if (accountUserDto.isPresent()) {
                 session.setAttribute("username", userName);
-                return "redirect:/welcome";  // Redirection vers la page de bienvenue
+                return "redirect:/welcome";
             } else {
-                redirectAttributes.addFlashAttribute("error", "Login échoué. Réessayez.");
+
                 return REDIRECT_TO_LOGIN;
             }
         } catch (Exception e) {
             logger.error("Erreur lors de la connexion : {}", e.getMessage());
+
             return REDIRECT_TO_LOGIN;
         }
     }

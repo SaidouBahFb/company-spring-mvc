@@ -14,7 +14,8 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 @WebFilter("/*")
-public class PrivateFilter implements Filter{
+public class PrivateFilter implements Filter {
+
     @Override
     public void init(FilterConfig filterConfig) throws ServletException {
         // TODO Auto-generated method stub
@@ -40,7 +41,6 @@ public class PrivateFilter implements Filter{
             chain.doFilter(request, response);
         else
             res.sendRedirect(req.getContextPath());
-            res.sendRedirect(req.getContextPath());
     }
 
     @Override
@@ -48,4 +48,5 @@ public class PrivateFilter implements Filter{
         // TODO Auto-generated method stub
 
     }
+
 }

@@ -37,4 +37,13 @@ public class ProductDto {
     public void setStock(double stock) {
         this.stock = stock;
     }
+
+    @Override
+    public String toString() {
+        return "ProductDto{" +
+                "ref='" + ref + '\'' +
+                ", name='" + name + '\'' +
+                ", stock=" + stock +
+                '}';
+    }
 }
